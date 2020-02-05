@@ -1,0 +1,13 @@
+<h1> <%= @duck.name %> </h1>
+<h2> Owned by: <%= link_to @duck.student.name, student_path(@duck.student) %> </h2>
+
+<h2> Description: <%= @duck.description %> </h2>
+
+
+
+<%= button_to "Edit #{@duck.name}'s info", edit_duck_path, method: "get" %>
+<br>
+<%= button_to "See all ducks", ducks_path, method: "get" %>
+
+
+

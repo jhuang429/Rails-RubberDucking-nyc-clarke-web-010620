@@ -1,0 +1,17 @@
+<h1> <%= @student.name %> </h1>
+<h2> Mod: <%= @student.mod %> </h2>
+
+<h2>Ducks Owned:</h2>
+<% @student.ducks.each do |duck| %> 
+<%= link_to duck.name, duck_path(duck) %> <br>
+<% end %>
+
+<br>
+<br>
+<br>
+<%= button_to "Edit #{@student.name}'s profile", edit_student_path, method: "get" %>
+<br>
+<%= button_to "See all Students", students_path, method: "get" %>
+
+
+

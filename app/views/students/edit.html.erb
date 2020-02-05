@@ -1,0 +1,25 @@
+<h1>Edit Student: <%= @student.name %> </h1>
+ 
+ <%  if flash[:my_errors] != nil %>
+<% flash[:my_errors].each do |e| %>
+Error: <%= e %>
+<% end %>
+<% end%>
+ 
+<%= form_for @student do |f| %> 
+<h3> <%= f.label :name %> </h3>
+<%= f.text_field :name %> 
+
+<br>
+
+<h3> <%= f.label :mod %> </h3>
+<%= f.number_field :mod %>
+
+<br>
+<br>
+
+<%= f.submit %>
+<% end %>
+<br>
+
+<%= button_to "Cancel", student_path(@student), method: "get" %>
