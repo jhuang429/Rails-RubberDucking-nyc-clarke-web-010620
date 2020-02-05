@@ -10,7 +10,7 @@ class DucksController < ApplicationController
   end
 
   def create  
-    @duck = duck.create(duck_params)
+    @duck = Duck.create(duck_params)
     if @duck.valid?
       redirect_to duck_path @duck
     else 
